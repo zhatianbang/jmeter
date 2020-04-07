@@ -19,7 +19,7 @@
 	
 	<!--详细报告，使用网络上的报告模板，可以用于查看接口报错定位-->
     <property name="detail" value="detail" />
-	<property name="jmeter.result.htmlNamedetail" value="${jmeter.result.html.dir}/${ReportName}${detail}${time}.html" />
+	<property name="jmeter.result.htmlNamedetail" value="${jmeter.result.html.dir}/${detail}${ReportName}${time}.html" />
        
 	<!--概要报告-->
     <property name="summary" value="summary" />

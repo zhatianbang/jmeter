@@ -2,3 +2,9 @@ timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success
 1586228585009,357,登陆1,200,,线程组 1-1,text,true,,1398,293,1,2,https://test-cc.chintcloud.net/api/auth/login,,357,ISO-8859-1,1,0,duankj-book,0,250
 1586228585395,24,新增设备,200,,线程组 1-1,text,true,,806,880,1,1,https://test-cc.chintcloud.net/api/asset,,24,UTF-8,1,0,duankj-book,0,0
 1586228585420,77,删除设备,200,,线程组 1-1,,true,,348,809,1,1,https://test-cc.chintcloud.net/api/asset/4d9f1310-787c-11ea-b940-ffc086b72a03,,77,ISO-8859-1,1,0,duankj-book,0,0
+1586232521966,362,登陆1,200,,线程组 1-1,text,true,,1398,293,1,2,https://test-cc.chintcloud.net/api/auth/login,,362,ISO-8859-1,1,0,duankj-book,0,253
+1586232522364,51668,新增资产,200,,线程组 1-1,text,true,,805,879,1,1,https://test-cc.chintcloud.net/api/asset,,51666,UTF-8,1,0,duankj-book,0,0
+1586232574038,53,删除资产,200,,线程组 1-1,,true,,348,809,1,1,https://test-cc.chintcloud.net/api/asset/782c15c0-7885-11ea-b7f9-ef7af4543770,,53,ISO-8859-1,1,0,duankj-book,0,8
+1586238149274,363,登陆1,200,,线程组 1-1,text,true,,1398,293,1,2,https://test-cc.chintcloud.net/api/auth/login,,363,ISO-8859-1,1,0,duankj-book,0,251
+1586238149672,22,新增资产,200,,线程组 1-1,text,true,,806,880,1,1,https://test-cc.chintcloud.net/api/asset,,21,UTF-8,1,0,duankj-book,0,0
+1586238149695,68,删除资产,200,,线程组 1-1,,true,,348,809,1,1,https://test-cc.chintcloud.net/api/asset/924d28b0-7892-11ea-b320-592943f6058e,,68,ISO-8859-1,1,0,duankj-book,0,0
