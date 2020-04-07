@@ -1,0 +1,2 @@
+build.xml中
+            <property name="jmeter.save.saveservice.output_format" value="xml"/> <!--不能使用csv-->

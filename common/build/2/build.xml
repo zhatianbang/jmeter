@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ant-jmeter-test" default="run" basedir=".">
+      <tstamp>
+        <format property="time" pattern="_yyyy_MMdd_HHmmss" />
+    </tstamp>
+    <!-- 需要改成自己本地的 Jmeter 目录-->  
+    <property name="jmeter.home" value="D:\installation\apache-jmeter-5.1.1" />
+    <property name="report.title" value="接口测试"/>
+
+	<property name="testplan.home" value="${jmeter.home}\common\jmx" />	<!--jmx脚本路径-->
+    <!-- jmeter生成html格式的结果报告的路径-->
+    <property name="jmeter.result.html.dir" value="${jmeter.home}\common\html" />
+	    <!-- jmeter生成jtl格式的结果报告的路径--> 
+    <property name="jmeter.result.jtl.dir" value="${jmeter.home}\common\jtl" />
+	
+	 <!-- 生成的报告的前缀-->  
+    <property name="ReportName" value="接口测试报告" />
+	<property name="jmeter.result.jtlName" value="${jmeter.result.jtl.dir}/${ReportName}${time}.jtl" />  <!--生成的jtl文字名字-->
+	
+	<!--详细报告，使用网络上的报告模板，可以用于查看接口报错定位-->
+    <property name="detail" value="detail" />
+	<property name="jmeter.result.htmlNamedetail" value="${jmeter.result.html.dir}/${ReportName}${detail}${time}.html" />
+       
+	<!--概要报告-->
+    <property name="summary" value="summary" />
+    <property name="jmeter.result.htmlName" value="${jmeter.result.html.dir}/${ReportName}${summary}${time}.html" />
+
+
+
+    <target name="run">
+        <antcall target="test" />
+        <antcall target="report" />
+    </target>
+
+
+	    <!-- 用来指定ant和jmeter集成所需要用到的jar包，是由jmeter提供的，默认存放在jmeter的extras目录下 ,如果不指定下面的jar包，则需要把该jar包放到ant的lib目录下-->
+    <path id="jmeter.classpath">
+        <fileset dir="${jmeter.home}\extras">
+          <include name="ant-jmeter*.jar"/>
+        </fileset>
+    </path>
+
+    <taskdef
+        name="jmeter"
+        classpathref="jmeter.classpath"
+        classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask"/>
+
+    <target name="test">
+     
+        <jmeter jmeterhome="${jmeter.home}" resultlog="${jmeter.result.jtlName}">
+            <!-- 声明要运行的脚本"*.jmx"指包含此目录下的所有jmeter脚本-->
+            <testplans dir="${testplan.home}" includes="*.jmx" />
+
+            <property name="jmeter.save.saveservice.output_format" value="xml"/>
+        </jmeter>
+    </target>
+
+    <path id="xslt.classpath">
+        <fileset dir="${jmeter.home}/lib" includes="xalan*.jar"/>
+        <fileset dir="${jmeter.home}/lib" includes="serializer*.jar"/>
+    </path>
+
+
+    <target name="report">
+        <tstamp> <format property="report.datestamp" pattern="yyyy/MM/dd HH:mm" /></tstamp>
+	   
+	   <!--              style="${jmeter.home}/extras/jmeter-results-report_21.xsl"> 概要报告-->  
+	   <xslt 
+              classpathref="xslt.classpath"
+              force="true"
+              in="${jmeter.result.jtlName}"
+              out="${jmeter.result.htmlName}"
+			  style="${jmeter.home}/extras/jmeter-results-detail-report_21.xsl"> <!--概要报告-->
+              <param name="showData" expression="${show-data}"/>
+              <param name="titleReport" expression="${report.title}"/>
+              <param name="dateReport" expression="${report.datestamp}"/> 
+       </xslt>
+	   <xslt 
+              classpathref="xslt.classpath"
+              force="true"
+              in="${jmeter.result.jtlName}"
+              out="${jmeter.result.htmlNamedetail}"
+              style="${jmeter.home}/common/jmeter.results.shanhe.me.xsl"><!--接口报错定位报告，模板来源网络-->
+              <param name="showData" expression="${show-data}"/>
+              <param name="titleReport" expression="${report.title}"/>
+              <param name="dateReport" expression="${report.datestamp}"/> 
+       </xslt>
+	   
+
+                <!-- 因为上面生成报告的时候，不会将相关的图片也一起拷贝至目标目录，所以，需要手动拷贝 --> 
+        <copy todir="${jmeter.result.html.dir}">
+            <fileset dir="${jmeter.home}/extras">
+                <include name="collapse.png" />
+                <include name="expand.png" />
+            </fileset>
+        </copy>
+    </target>
+
+</project>
