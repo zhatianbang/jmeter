@@ -92,6 +92,8 @@
             <fileset dir="${jmeter.home}/extras">
                 <include name="collapse.png" />
                 <include name="expand.png" />
+				<include name="jmeter.result.htmlName" />
+				<include name="jmeter.result.htmlNamedetail" />
             </fileset>
         </copy>
     </target>

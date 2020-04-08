@@ -52,7 +52,7 @@
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆1" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1、登陆" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -86,13 +86,110 @@
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="新增设备" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="2、新增产品" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;additionalInfo&quot;:{&quot;gateway&quot;:false,&quot;description&quot;:&quot;描述成为撒&quot;},&quot;productCode&quot;:&quot;yirZBNKUBh&quot;,&quot;productName&quot;:&quot;aa1dd&quot;,&quot;productCategoryName&quot;:&quot;A&quot;,&quot;name&quot;:&quot;d${__Random(1,9999999999999999,)}&quot;,&quot;type&quot;:&quot;aa1dd&quot;,&quot;sn&quot;:&quot;sn${__Random(1,9999999999999999,)}&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;published&quot;:&quot;false&quot;,&quot;accessType&quot;:&quot;subdevice&quot;,&quot;gateway&quot;:&quot;subdevice&quot;,&quot;secretType&quot;:&quot;一机一密&quot;,&quot;isShowGateway&quot;:true,&quot;usedSsl&quot;:false,&quot;authType&quot;:&quot;ACCESS_TOKEN&quot;,&quot;productCategoryName&quot;:&quot;a&quot;,&quot;productName&quot;:&quot;测${__Random(1,9999999999999999,)}&quot;,&quot;productCategoryId&quot;:&quot;0b0344a0-fb80-11e9-938d-8b0a5a95506a&quot;,&quot;productModel&quot;:&quot;c${__Random(1,9999999999999999,)}&quot;,&quot;deviceEncode&quot;:&quot;GB2312&quot;,&quot;accessProtocal&quot;:&quot;MQTT&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">https://test-cc.chintcloud.net/api/capability</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">productName</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..productName</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">name</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.name</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.tenantId.id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">PRODUCT_CAPABILITY</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.id.id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器 $.productCategoryId" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">productCategoryId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.productCategoryId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器 $.productModel" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">productModel</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.productModel</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器 $.productCode" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">productCode</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.productCode</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3、发布" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;id&quot;:{&quot;entityType&quot;:&quot;PRODUCT_CAPABILITY&quot;,&quot;id&quot;:&quot;${PRODUCT_CAPABILITY}&quot;},&quot;createdTime&quot;:1586309064263,&quot;additionalInfo&quot;:null,&quot;productCode&quot;:&quot;${productCode}&quot;,&quot;productToken&quot;:&quot;GfEItUHSPBckpynnfVru&quot;,&quot;productName&quot;:&quot;${productName}&quot;,&quot;published&quot;:true,&quot;productCategoryId&quot;:&quot;${productCategoryId}&quot;,&quot;productFamily&quot;:null,&quot;productModel&quot;:&quot;${productModel}&quot;,&quot;manufacturer&quot;:null,&quot;secretType&quot;:&quot;一机一密&quot;,&quot;deviceEncode&quot;:&quot;GB2312&quot;,&quot;accessType&quot;:&quot;subdevice&quot;,&quot;accessProtocal&quot;:&quot;MQTT&quot;,&quot;usedSsl&quot;:false,&quot;authType&quot;:&quot;ACCESS_TOKEN&quot;,&quot;description&quot;:null,&quot;tenantId&quot;:{&quot;entityType&quot;:&quot;TENANT&quot;,&quot;id&quot;:&quot;${tenantId}&quot;},&quot;createTs&quot;:1586309064259,&quot;modifyTs&quot;:1586309064259,&quot;haveDevice&quot;:false,&quot;name&quot;:&quot;${productName}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">https://test-cc.chintcloud.net/api/capability</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4、新增设备" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;additionalInfo&quot;:{&quot;gateway&quot;:false,&quot;description&quot;:&quot;描述成为撒&quot;},&quot;productCode&quot;:&quot;${productCode}&quot;,&quot;productName&quot;:&quot;${productName}&quot;,&quot;productCategoryName&quot;:&quot;a&quot;,&quot;name&quot;:&quot;产品${__Random(1,9999999999999999,)}&quot;,&quot;type&quot;:&quot;${productName}&quot;,&quot;sn&quot;:&quot;sn${__Random(1,9999999999999999,)}&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -129,7 +226,7 @@
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="删除设备" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5、删除设备" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
