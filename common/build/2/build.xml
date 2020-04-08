@@ -19,11 +19,11 @@
 	
 	<!--详细报告，使用网络上的报告模板，可以用于查看接口报错定位-->
     <property name="detail" value="detail" />
-	<property name="jmeter.result.htmlNamedetail" value="${jmeter.result.html.dir}/${detail}${ReportName}${time}.html" />
+	<property name="jmeter.result.htmlNamedetail" value="${jmeter.result.html.dir}/2${ReportName}${detail}${time}.html" />
        
 	<!--概要报告-->
     <property name="summary" value="summary" />
-    <property name="jmeter.result.htmlName" value="${jmeter.result.html.dir}/${ReportName}${summary}${time}.html" />
+    <property name="jmeter.result.htmlName" value="${jmeter.result.html.dir}/1${ReportName}${summary}${time}.html" />
 
 
 
