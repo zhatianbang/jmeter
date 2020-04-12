@@ -1,0 +1,121 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 1073741824 bytes for Failed to commit area from 0x00000000c0000000 to 0x0000000100000000 of length 1073741824.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3332), pid=28904, tid=29136
+#
+# JRE version:  (8.0_66-b18) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.66-b18 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000003640800):  JavaThread "Unknown thread" [_thread_in_vm, id=29136, stack(0x0000000003500000,0x0000000003600000)]
+
+Stack: [0x0000000003500000,0x0000000003600000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000003640800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=29136, stack(0x0000000003500000,0x0000000003600000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000000000363ec10] Heap_lock - owner thread: 0x0000000003640800
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6c5220000 - 0x00007ff6c5257000 	C:\ProgramData\Oracle\Java\javapath\java.exe
+0x00007ffe4f8a0000 - 0x00007ffe4fa7b000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffe4ce00000 - 0x00007ffe4ceae000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffe4c000000 - 0x00007ffe4c249000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffe4d0c0000 - 0x00007ffe4d161000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffe4ed00000 - 0x00007ffe4ed9d000 	C:\Windows\System32\msvcrt.dll
+0x00007ffe4ef40000 - 0x00007ffe4ef99000 	C:\Windows\System32\sechost.dll
+0x00007ffe4f770000 - 0x00007ffe4f895000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffe4cf70000 - 0x00007ffe4d0ba000 	C:\Windows\System32\USER32.dll
+0x00007ffe4c430000 - 0x00007ffe4c44e000 	C:\Windows\System32\win32u.dll
+0x00007ffe4efa0000 - 0x00007ffe4efc7000 	C:\Windows\System32\GDI32.dll
+0x00007ffe4c250000 - 0x00007ffe4c3d8000 	C:\Windows\System32\gdi32full.dll
+0x00007ffe4c450000 - 0x00007ffe4c4ea000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffe4c4f0000 - 0x00007ffe4c5e6000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffe41120000 - 0x00007ffe41387000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.15063.483_none_26002d27e7c744a2\COMCTL32.dll
+0x00007ffe4f470000 - 0x00007ffe4f769000 	C:\Windows\System32\combase.dll
+0x00007ffe4bf90000 - 0x00007ffe4bffa000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffe4ec70000 - 0x00007ffe4ec9d000 	C:\Windows\System32\IMM32.DLL
+0x0000000069f20000 - 0x0000000069ff2000 	C:\Program Files\Java\jre1.8.0_66\bin\msvcr100.dll
+0x0000000068d00000 - 0x0000000069589000 	C:\Program Files\Java\jre1.8.0_66\bin\server\jvm.dll
+0x00007ffe4eba0000 - 0x00007ffe4eba8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffe3ba40000 - 0x00007ffe3ba49000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffe4a280000 - 0x00007ffe4a2a3000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffe3e3f0000 - 0x00007ffe3e3fa000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffe4eda0000 - 0x00007ffe4ee0c000 	C:\Windows\System32\WS2_32.dll
+0x00007ffe4a220000 - 0x00007ffe4a24b000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffe4c3e0000 - 0x00007ffe4c429000 	C:\Windows\System32\cfgmgr32.dll
+0x000000006a590000 - 0x000000006a59f000 	C:\Program Files\Java\jre1.8.0_66\bin\verify.dll
+0x000000006a560000 - 0x000000006a589000 	C:\Program Files\Java\jre1.8.0_66\bin\java.dll
+0x000000006a540000 - 0x000000006a556000 	C:\Program Files\Java\jre1.8.0_66\bin\zip.dll
+
+VM Arguments:
+jvm_args: -XX:+HeapDumpOnOutOfMemoryError -Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:G1ReservePercent=20 -Djava.security.egd=file:/dev/urandom -Duser.language=en -Duser.region=EN 
+java_command: ApacheJMeter.jar
+java_class_path (initial): ApacheJMeter.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_66
+CLASSPATH=.;C:\Program Files\Java\jdk1.8.0_66\lib;C:\Program Files\Java\jdk1.8.0_66\lib\tools.jar;D:\installation\apache-jmeter-5.1.1\lib\ext\ApacheJMeter_core.jar; D:\installation\apache-jmeter-5.1.1\lib\jorphan.jar;
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;"C:\Program Files\Java\jdk1.8.0_66\bin;C:\Program Files\Java\jdk1.8.0_66\jre\bin;";D:\installation\apache-jmeter-5.1.1\bin;D:\installation\apache-ant-1.9.14\bin;D:\installation\node\;D:\installation\apache-maven-3.6.3\bin;D:\installation\android-sdk-windows\tools;D:\installation\android-sdk-windows\platform-tools;D:\installation\node-v12.15.0-win-x64;D:\installation\apache-tomcat-9.0.30\bin;D:\installation\Python37;D:\installation\Python37\Scripts;C:\Users\duankj\AppData\Local\Microsoft\WindowsApps;c:\program files\esafenet\cobra docguard client;C:\Users\duankj\AppData\Local\BypassRuntm;C:\Users\duankj\AppData\Roaming\npm;C:\Users\duankj\AppData\Local\Programs\Microsoft VS Code\bin
+USERNAME=duankj
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 15063 (10.0.15063.296)
+
+CPU:total 6 (6 cores per cpu, 1 threads per core) family 6 model 158 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16681352k(6975204k free), swap 32345732k(974260k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.66-b18) for windows-amd64 JRE (1.8.0_66-b18), built on Nov  9 2015 10:51:13 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Fri Mar 06 12:54:36 2020
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
