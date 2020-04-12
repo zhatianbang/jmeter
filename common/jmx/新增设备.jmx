@@ -189,7 +189,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;additionalInfo&quot;:{&quot;gateway&quot;:false,&quot;description&quot;:&quot;描述成为撒&quot;},&quot;productCode&quot;:&quot;${productCode}&quot;,&quot;productName&quot;:&quot;${productName}&quot;,&quot;productCategoryName&quot;:&quot;a&quot;,&quot;name&quot;:&quot;产品${__Random(1,9999999999999999,)}&quot;,&quot;type&quot;:&quot;${productName}&quot;,&quot;sn&quot;:&quot;sn${__Random(1,9999999999999999,)}&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;additionalInfo&quot;:{&quot;gateway&quot;:false,&quot;description&quot;:&quot;描述成为撒&quot;},&quot;productCode&quot;:&quot;${productCode}&quot;,&quot;productName&quot;:&quot;${productName}&quot;,&quot;productCategoryName&quot;:&quot;a&quot;,&quot;name&quot;:&quot;标签99${__Random(1,9999999999999999,)}&quot;,&quot;type&quot;:&quot;${productName}&quot;,&quot;sn&quot;:&quot;sn${__Random(1,9999999999999999,)}&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -226,7 +226,39 @@
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5、删除设备" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">99</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5、添加标签99" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;ab${__Random(1,999999,)}&quot;:&quot;b&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">https://test-cc.chintcloud.net/api/plugins/telemetry/DEVICE/${id}/TAG_SCOPE</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="6、删除设备" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>

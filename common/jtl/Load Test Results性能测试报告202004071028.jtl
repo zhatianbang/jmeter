@@ -1,4 +1,4 @@
 timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Filename,Latency,Encoding,SampleCount,ErrorCount,Hostname,IdleTime,Connect
-1586241505502,372,登陆1,200,,线程组 1-1,text,true,,1398,293,1,2,https://test-cc.chintcloud.net/api/auth/login,,372,ISO-8859-1,1,0,duankj-book,0,248
-1586241505921,23,新增资产,200,,线程组 1-1,text,true,,806,880,1,1,https://test-cc.chintcloud.net/api/asset,,23,UTF-8,1,0,duankj-book,0,0
-1586241505945,73,删除资产,200,,线程组 1-1,,true,,348,809,1,1,https://test-cc.chintcloud.net/api/asset/62ce37c0-789a-11ea-b7f9-ef7af4543770,,73,ISO-8859-1,1,0,duankj-book,0,0
+1586496076305,353,登陆1,200,,线程组 1-1,text,true,,1409,293,1,2,https://test-cc.chintcloud.net/api/auth/login,,353,ISO-8859-1,1,0,duankj-book,0,245
+1586496076687,39,新增资产,200,,线程组 1-1,text,true,,806,891,1,1,https://test-cc.chintcloud.net/api/asset,,39,UTF-8,1,0,duankj-book,0,0
+1586496076727,79,删除资产,200,,线程组 1-1,,true,,348,820,1,1,https://test-cc.chintcloud.net/api/asset/1ac93a80-7aeb-11ea-97a9-a311a39a4c5b,,79,ISO-8859-1,1,0,duankj-book,0,0
