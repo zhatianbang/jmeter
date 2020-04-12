@@ -2,7 +2,7 @@
 <project name="ant-jmeter-test" default="run" basedir=".">
       <tstamp>
         <format property="time" pattern="_yyyy_MMdd_HHmmss" />
-		<format property="time2" pattern="_yyyyMMdd" />
+
     </tstamp>
     <!-- 需要改成自己本地的 Jmeter 目录-->  
     <property name="jmeter.home" value="D:\installation\apache-jmeter-5.1.1" />
@@ -20,11 +20,11 @@
 	
 	<!--详细报告，使用网络上的报告模板，可以用于查看接口报错定位-->
     <property name="detail" value="detail" />
-	<property name="jmeter.result.htmlNamedetail" value="${jmeter.result.html.dir}/2${ReportName}${detail}${time2}.html" />
+	<property name="jmeter.result.htmlNamedetail" value="${jmeter.result.html.dir}/2${ReportName}${detail}${time1}.html" />
        
 	<!--概要报告-->
     <property name="summary" value="summary" />
-    <property name="jmeter.result.htmlName" value="${jmeter.result.html.dir}/1${ReportName}${summary}${time2}.html" />
+    <property name="jmeter.result.htmlName" value="${jmeter.result.html.dir}/1${ReportName}${summary}${time1}.html" />
 
 
 
