@@ -16,15 +16,15 @@
 	
 	 <!-- 生成的报告的前缀-->  
     <property name="ReportName" value="接口测试报告" />
-	<property name="jmeter.result.jtlName" value="${jmeter.result.jtl.dir}/${ReportName}${time2}.jtl" />  <!--生成的jtl文字名字-->
+	<property name="jmeter.result.jtlName" value="${jmeter.result.jtl.dir}/${ReportName}${time}.jtl" />  <!--生成的jtl文字名字-->
 	
 	<!--详细报告，使用网络上的报告模板，可以用于查看接口报错定位-->
     <property name="detail" value="detail" />
-	<property name="jmeter.result.htmlNamedetail" value="${jmeter.result.html.dir}/2${ReportName}${detail}${time1}.html" />
+	<property name="jmeter.result.htmlNamedetail" value="${jmeter.result.html.dir}/2${ReportName}${detail}${time}.html" />
        
 	<!--概要报告-->
     <property name="summary" value="summary" />
-    <property name="jmeter.result.htmlName" value="${jmeter.result.html.dir}/1${ReportName}${summary}${time1}.html" />
+    <property name="jmeter.result.htmlName" value="${jmeter.result.html.dir}/1${ReportName}${summary}${time}.html" />
 
 
 
